@@ -1,0 +1,118 @@
+{% extends "base.html" %}
+{% block content %}
+
+<section class="section">
+    <h2>Projects</h2>
+    <p class="section-subtitle">
+        A collection of my hands-on projects across Data Science, AI/ML, and Analytics.
+    </p>
+
+    <!-- FILTER BUTTONS -->
+    <div class="filter-buttons">
+        <button class="filter-btn active" data-filter="all">All</button>
+        <button class="filter-btn" data-filter="data-scientist">Data Scientist</button>
+        <button class="filter-btn" data-filter="data-analyst">Data Analyst</button>
+        <button class="filter-btn" data-filter="ai-ml">AI / ML Engineer</button>
+    </div>
+
+    <!-- PROJECT GRID -->
+    <div class="card-grid">
+
+        <!-- RAG Project -->
+        <div class="project-card data-scientist ai-ml">
+            <div class="project-header">
+                <h3>RAG-Based AI Teaching Assistant</h3>
+            </div>
+
+            <p class="project-desc">
+                Built a Retrieval-Augmented Generation system that answers
+                questions from custom video lectures using embeddings and LLMs.
+            </p>
+
+            <div class="project-tags">
+                <span>AI</span>
+                <span>RAG</span>
+                <span>NLP</span>
+                <span>LLMs</span>
+            </div>
+
+            <div class="project-links">
+                <a href="https://github.com/Dilkhushkumarcse/RAG-based-AI-Teaching-Assistant"
+                   class="btn small secondary">GitHub</a>
+            </div>
+        </div>
+
+        <!-- California House Prediction -->
+        <div class="project-card data-scientist">
+            <div class="project-header">
+                <h3>California House Price Prediction</h3>
+            </div>
+
+            <p class="project-desc">
+                Flask-based ML web app using Random Forest Regression to predict
+                median house prices with preprocessing pipelines.
+            </p>
+
+            <div class="project-tags">
+                <span>Flask</span>
+                <span>ML</span>
+                <span>Regression</span>
+            </div>
+
+            <div class="project-links">
+                <a href="https://github.com/Dilkhushkumarcse/House-Price-Prediction"
+                   class="btn small secondary">GitHub</a>
+            </div>
+        </div>
+
+        <!-- CKD Prediction -->
+        <div class="project-card data-scientist ai-ml">
+            <div class="project-header">
+                <h3>Chronic Kidney Disease Prediction</h3>
+            </div>
+
+            <p class="project-desc">
+                Streamlit ML app that predicts CKD with feature importance
+                visualization and probability graphs.
+            </p>
+
+            <div class="project-tags">
+                <span>ML</span>
+                <span>Streamlit</span>
+                <span>Healthcare</span>
+            </div>
+
+            <div class="project-links">
+                <a href="https://github.com/Dilkhushkumarcse/CKD-Prediction-System"
+                   class="btn small secondary">GitHub</a>
+            </div>
+        </div>
+
+        <!-- Excel Dashboard -->
+        <div class="project-card data-analyst">
+            <div class="project-header">
+                <h3>Sales Dashboard</h3>
+            </div>
+
+            <p class="project-desc">
+                Built an interactive Excel dashboard to analyze sales performance
+                across multiple cities with dynamic controls and KPIs for
+                business decision-making.
+            </p>
+
+            <div class="project-tags">
+                <span>Excel</span>
+                <span>Data Analysis</span>
+                <span>Visualization</span>
+            </div>
+
+            <div class="project-links">
+                <a href="https://github.com/Dilkhushkumarcse/Sales-Dashboard"
+                   class="btn small secondary">GitHub</a>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+{% endblock %}

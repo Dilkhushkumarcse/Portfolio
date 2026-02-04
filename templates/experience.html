@@ -1,0 +1,122 @@
+{% extends "base.html" %}
+{% block content %}
+
+<section class="section">
+    <h2 class="section-title">Experience & Certifications</h2>
+
+    <!-- FILTER BUTTONS -->
+    <div class="filter-buttons">
+        <button class="filter-btn active" onclick="filterItems('all')">All</button>
+        <button class="filter-btn" onclick="filterItems('ai')">AI / ML</button>
+        <button class="filter-btn" onclick="filterItems('python')">Python</button>
+        <button class="filter-btn" onclick="filterItems('internship')">Internship</button>
+        <button class="filter-btn" onclick="filterItems('workshop')">Workshops</button>
+        <button class="filter-btn" onclick="filterItems('achievement')">Achievements</button>
+    </div>
+
+    <!-- CERTIFICATE GRID -->
+    <div class="certificate-grid">
+
+        <!-- DATA SCIENCE -->
+        <div class="certificate-card internship">
+            <img src="{{ url_for('static', filename='certificates/Data Science.png') }}"
+                 data-full="{{ url_for('static', filename='certificates/Data Science.png') }}"
+                 class="cert-preview">
+            <h4>The Ultimate Data Science Course</h4>
+            <p>Code with Harry</p>
+        </div>
+
+        <!-- INTERNSHIP -->
+        <div class="certificate-card internship">
+            <img src="{{ url_for('static', filename='certificates/internship.jpeg') }}"
+                 data-full="{{ url_for('static', filename='certificates/internship.jpeg') }}"
+                 class="cert-preview">
+            <h4>Python with Data Science Internship</h4>
+            <p>QSpiders / PySpiders</p>
+        </div>
+
+        <!-- AI RESEARCH PAPER (PDF) -->
+        <div class="certificate-card ai">
+            <img src="{{ url_for('static', filename='certificates/research_paper.png') }}"
+                 data-pdf="{{ url_for('static', filename='certificates/Resarch Paper - 4.pdf') }}"
+                 class="cert-pdf">
+            <h4>AI-Powered Medical Data Classification</h4>
+            <p>Research Paper (ML + XAI)</p>
+        </div>
+
+        <!-- THINKNEXT AI -->
+        <div class="certificate-card ai">
+            <img src="{{ url_for('static', filename='certificates/thinknext_ai.jpg') }}"
+                 data-full="{{ url_for('static', filename='certificates/thinknext_ai.jpg') }}"
+                 class="cert-preview">
+            <h4>Basics of Artificial Intelligence</h4>
+            <p>ThinkNEXT Technologies</p>
+        </div>
+
+        <!-- AI AGENTS WORKSHOP -->
+        <div class="certificate-card workshop">
+            <img src="{{ url_for('static', filename='certificates/ai_agents_workshop.png') }}"
+                 data-full="{{ url_for('static', filename='certificates/ai_agents_workshop.png') }}"
+                 class="cert-preview">
+            <h4>AI Agents Workshop</h4>
+            <p>Skill India – Govt. of India</p>
+        </div>
+
+        <!-- PYTHON BOOTCAMP -->
+        <div class="certificate-card python">
+            <img src="{{ url_for('static', filename='certificates/python.png') }}"
+                 data-full="{{ url_for('static', filename='certificates/python.png') }}"
+                 class="cert-preview">
+            <h4>Python Bootcamp 2025</h4>
+            <p>CodeWithHarry</p>
+        </div>
+
+        <!-- IBM AI -->
+        <div class="certificate-card ai">
+            <img src="{{ url_for('static', filename='certificates/ibm_ai.png') }}"
+                 data-full="{{ url_for('static', filename='certificates/ibm_ai.png') }}"
+                 class="cert-preview">
+            <h4>AI Fundamentals</h4>
+            <p>IBM SkillsBuild</p>
+        </div>
+
+        <!-- HACKATHON -->
+        <div class="certificate-card achievement">
+            <img src="{{ url_for('static', filename='certificates/nielit_ml.jpg') }}"
+                 data-full="{{ url_for('static', filename='certificates/nielit_ml.jpg') }}"
+                 class="cert-preview">
+            <h4>Hackathon – 3rd Place</h4>
+            <p>AI-based Analytics Solution</p>
+        </div>
+
+        <!-- INTERNATIONAL CONFERENCE -->
+        <div class="certificate-card achievement">
+            <img src="{{ url_for('static', filename='certificates/icaml_2025.jpg') }}"
+                 data-full="{{ url_for('static', filename='certificates/icaml_2025.jpg') }}"
+                 class="cert-preview">
+            <h4>International Conference on AI & ML (ICAML-2025)</h4>
+            <p>International Conference</p>
+        </div>
+
+        <!-- PYTHON IIT BOMBAY -->
+        <div class="certificate-card python achievement">
+            <img src="{{ url_for('static', filename='certificates/python_iit_bombay.jpg') }}"
+                 data-full="{{ url_for('static', filename='certificates/python_iit_bombay.jpg') }}"
+                 class="cert-preview">
+            <h4>Python 3.4.3 Certification</h4>
+            <p>IIT Bombay</p>
+        </div>
+
+    </div>
+</section>
+
+<!-- FULLSCREEN MODAL -->
+<div id="certModal" class="cert-modal">
+    <span class="cert-close">&times;</span>
+    <img id="certImage" class="cert-modal-content">
+    <iframe id="certPdf" class="cert-pdf-viewer"></iframe>
+</div>
+
+<script src="{{ url_for('static', filename='js/filter.js') }}"></script>
+
+{% endblock %}

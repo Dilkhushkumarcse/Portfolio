@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Portfolio | Data Scientist</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <script defer src="{{ url_for('static', filename='js/main.js') }}"></script>
+</head>
+<body>
+<!-- navbar -->
+<nav class="navbar">
+    <div class="logo">Dilkhush<span>.</span></div>
+
+    <ul class="nav-links" id="navLinks">
+        <!-- HOME SECTIONS (WORK FROM ANY PAGE) -->
+        <li><a href="/#home">Home</a></li>
+        <li><a href="/#highlights">Highlights</a></li>
+        <li><a href="/#resume">Resume</a></li>
+
+        <!-- SEPARATE PAGES -->
+        <li><a href="/projects">Projects</a></li>
+        <li><a href="/experience">Achievements</a></li>
+        <li><a href="/#contact">Contact</a></li>
+    </ul>
+
+    <div class="menu-toggle" id="menuToggle">☰</div>
+</nav>
+<!-- PAGE CONTENT -->
+<main id="page-content">
+    {% block content %}{% endblock %}
+</main>
+<!-- FOOTER -->
+<footer>
+    <p>© 2026 Dilkhush Kumar | All Rights Reserved</p>
+</footer>
+
+</body>
+</html>

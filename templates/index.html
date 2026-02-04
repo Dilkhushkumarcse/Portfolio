@@ -1,0 +1,207 @@
+{% extends "base.html" %}
+{% block content %}
+
+<section id="home" class="hero colorful-bg">
+    <div class="hero-content">
+        <h1>
+            Hi, I'm <span>Dilkhush Kumar</span>
+        </h1>
+
+        <!-- FIXED TYPING AREA (NO LAYOUT SHIFT) -->
+        <div class="typing-container">
+            <span class="typing"></span>
+        </div>
+
+        <p class="intro">
+            I help businesses turn <strong>raw data</strong> into
+            <strong>actionable insights</strong> using
+            <span>Data Science</span>, <span>Data Analyst</span>, <span>AI</span> and <span>Machine Learning</span>.
+            My work focuses on real-world impact, decision-making, and scalability.
+        </p>
+
+        <div class="cta-buttons">
+            <a href="#highlights" class="btn primary">View My Work</a>
+            <a href="#contact" class="btn secondary">Contact Me</a>
+        </div>
+    </div>
+</section>
+
+<section id="highlights" class="section">
+    <h2>Highlights & Achievements</h2>
+    <p class="section-subtitle">
+        A snapshot of my key projects, achievements, and professional training.
+    </p>
+
+    <div class="card-grid">
+
+        <!-- Project 1 -->
+        <div class="card">
+            <h3>RAG-Based AI Teaching Assistant</h3>
+            <p>
+                Built an AI-powered teaching assistant using RAG to answer
+                context-aware questions from custom knowledge video sources.
+            </p>
+            <span class="tag">AI • NLP • LLMs</span>
+        </div>
+
+        <!-- Hackathon -->
+        <div class="card">
+            <h3>3rd Place – Tech Titan Hackathon 2025</h3>
+            <p>
+                Secured 3rd position by building a data-driven solution
+                focused on real-world problem solving under time constraints.
+            </p>
+            <span class="tag">Hackathon • Teamwork • Innovation</span>
+        </div>
+
+        <!-- Certification -->
+        <div class="card">
+            <h3>Job-Ready Data Science Certification</h3>
+            <p>
+                Completed the <strong>“Ultimate Job Ready Data Science Course”</strong>
+                by CodeWithHarry, covering Python, ML, DL, and real-world projects.
+            </p>
+            <span class="tag">Certification • Data Science</span>
+        </div>
+
+        <!-- Internship / Training -->
+        <div class="card">
+            <h3>Data Science Training – QSpiders</h3>
+            <p>
+                Currently undergoing professional training in Data Science at
+                QSpiders, focusing on Python, data analysis, and machine learning.
+            </p>
+            <span class="tag">Internship • Training • Data Science</span>
+        </div>
+
+    </div>
+</section>
+
+
+<section id="resume" class="section gradient-box">
+    <h2>Resume</h2>
+    <p>
+        Select a resume tailored to specific roles and responsibilities.
+    </p>
+
+    <div class="resume-grid">
+
+        <!-- Data Scientist -->
+        <div class="resume-card">
+            <h3>Data Scientist</h3>
+            <p>Focused on ML models, analytics, and business insights.</p>
+
+            <div class="resume-actions">
+                <a href="/static/resumes/Resume 1 .pdf" class="btn secondary" target="_blank" rel="noopener">
+                    View Resume
+                </a>
+
+                <a href="/static/resumes/Resume 1 .pdf" class="btn primary" download>
+                    Download
+                </a>
+            </div>
+        </div>
+
+        <!-- Data Analyst -->
+        <div class="resume-card">
+            <h3>Data Analyst</h3>
+            <p>Dashboards, SQL, reporting, and decision support.</p>
+
+            <div class="resume-actions">
+                <a href="/static/resumes/Resume 2 .pdf" class="btn secondary" target="_blank" rel="noopener">
+                    View Resume
+                </a>
+
+                <a href="/static/resumes/Resume 2 .pdf" class="btn primary" download>
+                    Download
+                </a>
+            </div>
+        </div>
+
+        <!-- AI / ML Engineer -->
+        <div class="resume-card">
+            <h3>AI / ML Engineer</h3>
+            <p>Model deployment, pipelines, and AI systems.</p>
+
+            <div class="resume-actions">
+                <a href="/static/resumes/Resume 3 .pdf" class="btn secondary" target="_blank" rel="noopener">
+                    View Resume
+                </a>
+
+                <a href="/static/resumes/Resume 3 .pdf" class="btn primary" download>
+                    Download
+                </a>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+
+<section id="contact" class="section">
+    <h2>Contact Me</h2>
+    <p>
+        Interested in collaboration, data projects, or business insights?
+        Let’s connect.
+    </p>
+
+    <!-- FLASH MESSAGES -->
+    {% with messages = get_flashed_messages(with_categories=true) %}
+    {% for category, msg in messages %}
+    <div class="alert {{ category }}">{{ msg }}</div>
+    {% endfor %}
+    {% endwith %}
+
+    <!-- CONTACT FORM -->
+    <form method="POST" action="/contact" class="contact-form">
+        <input type="text" name="name" placeholder="Your Name" required>
+        <input type="email" name="email" placeholder="Your Email" required>
+        <textarea name="message" placeholder="Your Message" required></textarea>
+
+        <!-- CAPTCHA -->
+        <div class="captcha-box">
+            <span class="captcha-text" id="captchaText">{{ captcha }}</span>
+
+            <button type="button" class="captcha-refresh" title="Refresh CAPTCHA" onclick="refreshCaptcha()">
+                ⟳
+            </button>
+
+            <input type="text" name="captcha" placeholder="Enter CAPTCHA" required>
+        </div>
+
+        <button class="btn primary">Send Message</button>
+    </form>
+
+    <!-- CONFIDENTIALITY NOTICE -->
+    <p class="confidentiality">
+        <strong>Confidentiality Notice:</strong>
+        Your information is private and will only be used to respond to your message.
+        I do not share personal data with third parties.
+    </p>
+
+    <!-- SOCIAL LINKS -->
+    <div class="social-links">
+        <a href="https://www.linkedin.com/in/dilkhush-kumar-b58664273/" target="_blank">
+            LinkedIn
+        </a>
+        <a href="https://github.com/Dilkhushkumarcse/" target="_blank">
+            GitHub
+        </a>
+        <a href="mailto:dilkhush4kr@gmail.com">
+            Email
+        </a>
+    </div>
+
+</section>
+
+<script>
+    function refreshCaptcha() {
+        fetch("/refresh-captcha")
+            .then(res => res.json())
+            .then(data => {
+                document.getElementById("captchaText").innerText = data.captcha;
+            });
+    }
+</script>
+
+{% endblock %}
