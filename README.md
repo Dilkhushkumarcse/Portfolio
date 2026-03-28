@@ -1,4 +1,4 @@
-# Personal Portfolio – Flask
+# Personal Portfolio
 
 A modern, responsive **personal portfolio website** built using **Flask**, designed to showcase my **projects, skills, achievements, certifications**, and provide a **secure contact system** with CAPTCHA protection, database storage, email, and WhatsApp alerts.
 
@@ -175,20 +175,6 @@ Update in `app.py`:
 * Gmail App Password
 * Twilio SID & Auth Token
 * WhatsApp phone number
-
----
-
-### 5️⃣ Run Application
-
-```bash
-python app.py
-```
-
-Open browser:
-
-```
-http://127.0.0.1:5000
-```
 
 ---
 
